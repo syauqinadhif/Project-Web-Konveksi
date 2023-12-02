@@ -1,0 +1,287 @@
+:root {
+
+  --primary: #118fbd;
+  --bg: #010101;
+
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+
+}
+
+body {
+
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 2500px;
+
+}
+
+
+/* Navbar Start */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1.4rem 4%;
+  justify-content: space-between;
+  background-color: rgba(1, 1, 1, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  /* height: 60px; */
+  transition: top 0.3s;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav {
+  margin-left: auto;
+  /* Menempatkan navbar-nav di sisi kanan */
+}
+
+.navbar .navbar-nav a {
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: ' ';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.75);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  margin-left: auto;
+}
+
+#hamburger-menu,
+#close {
+  display: none;
+}
+
+/* Navbar End */
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(./hero-bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(0deg, rgb(6, 6, 6) 1%, rgba(255, 255, 255, 0)40%);
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 2.7rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.3;
+}
+
+.hero .content p {
+  font-size: 1.3rem;
+  margin-top: 0rem;
+  line-height: 1.4;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 3rem;
+  box-shadow: 1px 1px 3px, rgba(1, 1, 3, 0.5);
+}
+
+/* Slogan Section */
+.slogan {
+  padding: 5rem 7% 5rem;
+}
+
+.slogan h1 {
+  font-size: 1.75rem;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.3;
+}
+
+.slogan .sub-slogan span {
+  color: var(--primary);
+}
+
+/* End Slogan */
+
+/* Figure */
+.product-figure {
+  margin: 3rem 4rem;
+  padding: 3rem 2.5%;
+  background-color: rgb(233, 233, 233);
+  border-radius: 50px;
+}
+
+.product-figure h2 {
+  color: var(--bg);
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.product-figure .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+.product-figure .row .figure-card {
+  text-align: center;
+  padding: 1rem 1%;
+}
+
+.product-figure .row .figure-card h3 {
+  color: var(--bg);
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* End Figure */
+
+.contact-info {
+  margin: 3rem 4rem;
+  align-items: center;
+  background: linear-gradient(to right, rgb(52, 51, 51), var(--primary));
+  border-radius: 2.5rem;
+}
+
+.contact-info .content {
+  text-align: left;
+  padding: 5rem 7%;
+  max-width: 60rem;
+}
+
+.footer {
+  padding: 3rem 7% 5rem;
+}
+
+.footer h1 {
+  font-size: 1.75rem;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.3;
+}
+
+
+
+
+
+/* Media Queries */
+
+/* Laptop */
+
+/* Tablet */
+@media(max-width: 790px) {
+  html {
+    font-size: 72.5%;
+  }
+
+  #hamburger-menu,
+  #close {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: hsla(223, 67%, 37%, 0.303);
+    width: 30rem;
+    height: 100vh;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    /*For Safar*/
+    transition: right .4s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #fff;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+}
+
+/* Mobile Phone */
+@media(max-width: 568px) {
+  html {
+    font-size: 67.5%;
+  }
+}
